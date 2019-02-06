@@ -1,3 +1,7 @@
+/**
+ * 06-02-10191
+ */
+
 /* https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/sort */
 const NumbersArray = [12,27,9,3,21,6,18,24,15];
 

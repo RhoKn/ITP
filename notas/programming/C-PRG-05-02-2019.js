@@ -1,4 +1,6 @@
 /**
+ * 05-02-2019
+ * 
  * NOTAS:
  * Programacion funcional
  * 

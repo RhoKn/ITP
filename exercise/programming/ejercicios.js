@@ -25,3 +25,24 @@ var init = function(){
      * RETO: INTENTAR CON SWITCH
      *//*
 }();*/
+
+/**
+ * var init = function(total) {
+    if(total %2 ==0){
+        for(var counter = 0; counter< total; counter++){
+            var module= (counter+1) %2;
+            switch(module){
+                case 0:
+                    console.log(' #'.repeat(total/2));
+                    break;
+                default:
+                    console.log('# '.repeat(total/2));
+                    break;
+            }
+        }
+    }else{
+        console.log('tiene que ser un numero par');
+    }
+    
+}
+ */

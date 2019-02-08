@@ -4,7 +4,7 @@
 
 /* https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/sort */
 const NumbersArray = [12,27,9,3,21,6,18,24,15];
-
+/*
 var init = function(NumbArr){
     
     let primerRenglon = split(NumbArr,0,10);
@@ -78,4 +78,28 @@ function build(primerRenglon, segundoRenglon, tercerRenglon){
         }
     }
     return matriz;
+}
+*/
+var init = function (theArray){
+    var mgcNumbr = magicNumber(theArray);
+    var matrix = buildMatrix(theArray,theArray.length);
+    console.log(mgcNumbr);
+}(NumbersArray);
+
+
+function magicNumber (theArray){
+    theArray = theArray.sort((a,b) =>{
+        return a-b;
+    });
+    var x = theArray[0] + (theArray[Math.floor(theArray.length/2)]) + theArray[theArray.length-1];
+    return x;
+}
+
+function buildMatrix (theArray, items){
+    var matrix = new Array();
+
+    for ( var columns = 0; columns < Math.sqrt(items); columns++ ) {
+        matrix[columns] = []; 
+    }
+    
 }

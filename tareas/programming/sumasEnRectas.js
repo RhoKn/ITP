@@ -4,7 +4,7 @@
 
 /* https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/sort */
 const NumbersArray = [12,27,9,3,21,6,18,24,15];
-
+/*
 var init = function(NumbArr){
     
     let primerRenglon = split(NumbArr,0,10);
@@ -23,7 +23,7 @@ var init = function(NumbArr){
     console.log(`----Rectas a sumar----`);
     console.log(`${matriz[0][0]} - -`);
     console.log(`- ${matriz[1][1]} -`);
-    console.log(`- - ${matriz[2][2]} \n`);
+    console.log(`- - ${matriz[2][0]} \n`);
 
     console.log(`- ${matriz[0][1]} -`);
     console.log(`- ${matriz[1][1]} -`);
@@ -65,33 +65,7 @@ function build(primerRenglon, segundoRenglon, tercerRenglon){
                     matriz[line][column] = primerRenglon[column];
                 }
                 break;
-            case 1:
-                let middle;
-                let index;
-                for(var column = 0; column < 3; column ++){    
-                    if(primerRenglon[0] + segundoRenglon[column] + tercerRenglon[2] ==45){
-                        if(primerRenglon[2] + segundoRenglon[column] + tercerRenglon[0] ==45){
-                            middle = segundoRenglon[column];
-                            index = column;
-                            break;
-                        }
-                    }
-                }
-                matriz[line][1] = middle;
-                switch (index) {
-                    case 0:
-                        matriz[line][0] = segundoRenglon[1];
-                        matriz[line][2] = segundoRenglon[2];
-                        break;
-                    case 1:
-                        matriz[line][0] = segundoRenglon[0];
-                        matriz[line][2] = segundoRenglon[2];
-                        break;
-                    case 2:
-                        matriz[line][0] = segundoRenglon[0];
-                        matriz[line][2] = segundoRenglon[1];    
-                        break;
-                }
+            case 1: 
                 for(var column = 0; column < 3; column ++){
                     matriz[line][column] = segundoRenglon[column];
                 }
@@ -103,6 +77,29 @@ function build(primerRenglon, segundoRenglon, tercerRenglon){
                 break;
         }
     }
-
     return matriz;
+}
+*/
+var init = function (theArray){
+    var mgcNumbr = magicNumber(theArray);
+    var matrix = buildMatrix(theArray,theArray.length);
+    console.log(mgcNumbr);
+}(NumbersArray);
+
+
+function magicNumber (theArray){
+    theArray = theArray.sort((a,b) =>{
+        return a-b;
+    });
+    var x = theArray[0] + (theArray[Math.floor(theArray.length/2)]) + theArray[theArray.length-1];
+    return x;
+}
+
+function buildMatrix (theArray, items){
+    var matrix = new Array();
+
+    for ( var columns = 0; columns < Math.sqrt(items); columns++ ) {
+        matrix[columns] = []; 
+    }
+    
 }
